@@ -1,3 +1,4 @@
+< 딥러닝 응용II: 컴퓨터 비전 프로젝트 >
 # Deep-learning-project-code
 Class Imbalanced Deep Learning via a Class-Balanced Ensemble 논문 저자의 코드 재현
 
@@ -19,3 +20,11 @@ Class Imbalanced Deep Learning via a Class-Balanced Ensemble 논문 저자의 �
 # 시사점
 - 해당 연구에서 제안하는 보조 분류기 및 BCE loss가 불균형 클래스 데이터셋에서 좋은 성능을 보임
 - training 단계에서 보조분류기를 사용해 학습한 뒤 test 단계에서 보조분류기를 사용하지 않고 메인 네트워크만 사용해도 분류 성능이 좋기 때문에 resource의 제약이 있을 때에는 시간적 효율을 위해 test 단계에서 메인 네트워크만 사용할 수 있음
+
+# 한계점
+- 작성된 코드에서 클래스별 신뢰도 누적 행렬은 loss 계산에 있어서 클래스별 가중치로써의 의미보다는 k개 분류기의 평균 신뢰도를 구하기 위한 목적으로만 쓰이고 있음
+- 코드 내부에 클래스별 가중치 변수를 만들어 놓고도 항상 None 값으로 고정되어 있음
+
+# 개선 아이디어
+- BCE Loss 함수로부터 반환된 결과값 중 클래스별 신뢰도 누적 행렬인 p를 이용하여 nll_loss 함수의 가중치로 활용하는 방법
+- 코드 작동 소요시간이 오래 걸리는 여건 상 실제 테스트를 해보지는 못하였음
