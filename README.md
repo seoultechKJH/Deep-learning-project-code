@@ -1,4 +1,4 @@
-< 딥러닝 응용II: 컴퓨터 비전 프로젝트 >
+< 딥러닝 응용II: 컴퓨터 비전 프로젝트 - 테크니컬 포트폴리오 기술평가항목 : 1>
 # Deep-learning-project-code
 Class Imbalanced Deep Learning via a Class-Balanced Ensemble 논문 저자의 코드 재현
 
